@@ -1,0 +1,117 @@
+:root {
+  --ch-height: clamp(0.75rem, 1.5vw, 2rem);
+  --ch-scale: 0.6;
+  --weft-height: calc(var(--ch-height) * var(--ch-scale));
+}
+
+/* ––––––––––––––––––––
+          RESET
+  ––––––––––––––––––––– */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 120rem;
+  margin-inline: auto;
+  height: 100%;
+}
+.pre-container pre {
+  font-family: monospace;
+  white-space: pre;
+  font-size: 2rem;
+  line-height: 0.6em;
+  margin: 0;
+  padding: 0;
+  transform: scaleY(var(--ch-scale));
+  transform-origin: top;
+}
+
+.weft-container {
+  position: relative;
+}
+
+.mygrid {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  /* margin-block-end: -0.03em; */
+}
+
+.mygrid div {
+  height: 100%;
+}
+
+.mygrid pre {
+  font-family: monospace;
+  white-space: pre;
+  transform: scaleY(var(--ch-scale));
+  transform-origin: top;
+  margin-block-end: -0.4em;
+  font-size: var(--ch-height);
+  line-height: var(--ch-height);
+  padding: 0;
+}
+
+.block1 {
+  color: #8ba300;
+  background-color: #f3ffad;
+  /* background-image: repeating-linear-gradient(
+    transparent 0 var(--weft-height),
+    rgba(15, 90, 139, 0.2) var(--weft-height) calc(var(--weft-height) * 2)
+  ); */
+  background-image: linear-gradient(
+    transparent 0 calc(var(--weft-height) * 7),
+    rgba(255, 255, 255, 0.4) calc(var(--weft-height) * 7)
+      calc(var(--weft-height) * 23),
+    transparent calc(var(--weft-height) * 23) calc(var(--weft-height) * 16)
+  );
+}
+
+.block2 {
+  color: #684c29;
+  background-color: #ffe8ad;
+  background-image: linear-gradient(
+    transparent calc(var(--weft-height) * 3.5),
+    rgb(254, 222, 227) calc(var(--weft-height) * 7),
+    rgba(255, 255, 255, 0.4) calc(var(--weft-height) * 7)
+      calc(var(--weft-height) * 13),
+    transparent calc(var(--weft-height) * 13) calc(var(--weft-height) * 16)
+  );
+}
+.block3 {
+  color: #974a30;
+  background-color: #ffdbcf;
+  background-image: linear-gradient(
+    transparent 0 calc(var(--weft-height) * 7),
+    rgba(255, 255, 255, 0.4) calc(var(--weft-height) * 7)
+      calc(var(--weft-height) * 13),
+    transparent calc(var(--weft-height) * 13) calc(var(--weft-height) * 16)
+  );
+}
+
+.block4 {
+  color: orchid;
+}
+
+.top-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* .mygrid pre:hover {
+  filter: opacity(80%);
+} */
+.color-sample__list {
+  display: flex;
+
+  & div {
+    height: 12rem;
+    width: 12rem;
+  }
+}
