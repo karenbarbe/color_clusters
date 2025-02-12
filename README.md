@@ -25,7 +25,7 @@ Lightness
 
 ## Live site
 
-[Color Clusters](https://karenbarbe.github.io/) on GitHub Pages
+[Color Clusters](https://karenbarbe.github.io/color_clusters/) on GitHub Pages
 
 ### Technical implementation
 
