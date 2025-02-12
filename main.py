@@ -1,8 +1,15 @@
 import json, requests
 from color_corrector import correct_hsl_colors, hex_to_hsl, hsl_to_hex
 
-image_name = "WAM01"
-image_url = f"raw.githubusercontent.com/karenbarbe/colour-confident-stitching/refs/heads/main/images/{image_name}.jpg"
+"""
+TO START: Update the variable `image_name` and/or `url` to match the image location. Do the same for `imageName` in script.js
+RUN THIS SCRIPT: python3 main.py run
+
+"""
+
+image_name = "cups"
+url = f"raw.githubusercontent.com/karenbarbe/color_clusters/refs/heads/main/images"
+image_url = f"{url}/{image_name}.jpg"
 precision_type = "low"
 num = 7
 

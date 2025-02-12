@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Clusters | Capture color palettes from images</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+<div class="wrapper">
+  <div id="color-clusters" class="color-sample__list"></div>
+  <div class="h1-container">
+    <h1 class="">Color clusters</h1>
+  </div>
+</div>
+      <section class="wrapper section">
+        <h2>How it works</h2>
+        <div class="content-container">
+          <p>Color Clusters use the set of colors obtained with <a href="https://mk.bcgsc.ca/colorsummarizer/">Image Color Summarizer API</a> and adjusts their saturation and lightness to create an enticing color palette.</p>
+          <p>The API reports accurate hues, but the saturation and lightness values can appear muddy if the intention is to use the resulting palette in a visual project.</p>
+          <p>The following color corrections aim at enhacing the palette:</p>
+          <p><span class="semibold">Hue</span>
+<ul>
+  <li>Original hue value</li>
+</ul>
+</p>
+
+<p><span class="semibold">Saturation</span>
+<ul>
+  <li>Light colors (L ≥ 70): Increase by ~25%</li>
+  <li>Mid-range colors (40 ≤ L < 70): Increase by ~20%</li>
+  <li>Dark colors (L < 40): Increase by ~13%</li>
+</ul>
+</p>
+
+<p><span class="semibold">Lightness</span>
+<ul>
+  <li>Light colors: Increase by 5-6 points</li>
+  <li>Mid-range colors: Increase by 13-14 points</li>
+  <li>Dark colors: Increase by 10 points</li>
+</ul>
+</p>
+        </div>
+      </section>
+      <section class="wrapper section">
+        <div class="h2-container">
+          <h2>Sample image</h2>
+        </div>
+        <div id="sample-image" class="image-container"></div>
+      </section>
+      <section class="wrapper section">
+        <div class="h2-container">
+          <h2>Corrected color clusters</h2>
+        </div>
+        <div class="table-container overflow-x">
+          <table class="table">
+            <tr id="swatch-row" class="swatch-row">
+              <th>Color swatch</th>
+            </tr>
+            <tr id="hex-row">
+              <th>Hex color</th>
+            </tr>
+            <tr id="hue-row">
+              <th>Hue</th>
+            </tr>
+            <tr id="saturation-row">
+              <th>Saturation</th>
+            </tr>
+            <tr id="lightness-row">
+              <th>Lightness</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrapper footer-container">
+        <h3>How to use this script</h3>
+        <ul>
+          <li>Clone the <a href="https://github.com/karenbarbe/color_clusters">repository</a></li>
+          <li>Follow README file to create virtual environment and install packages</li>
+          <li>Update <code>image_name</code> and/or <code>url</code> to match the image location in <code>main.py</code></li>
+          <li>Update <code>imageName</code> variable in <code>script.js</code></li>
+          <li>Run <code>main.py</code> and open <code>index.html</code></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
