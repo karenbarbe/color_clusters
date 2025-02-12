@@ -98,6 +98,7 @@ a {
   text-underline-offset: 0.25em;
 }
 
+a,
 a:visited {
   color: inherit;
 }
