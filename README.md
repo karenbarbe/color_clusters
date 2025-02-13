@@ -27,7 +27,7 @@ Lightness
 
 [Color Clusters](https://karenbarbe.github.io/color_clusters/) on GitHub Pages
 
-### Technical implementation
+## Technical implementation
 
 **Layout**:
 
@@ -61,8 +61,24 @@ pip install requirements.txt
 ```
 
 3. Update `image_name` and/or `url` to match the image location in `main.py`
+
+```
+image_name = "WAM01"
+url = f"raw.githubusercontent.com/karenbarbe/color_clusters/refs/heads/main/images"
+```
+
 4. Update `imageName` variable in `script.js`
+
+```
+const imageName = "WAM01";
+```
+
 5. Run `main.py`
+
+```
+python3 main.py run
+```
+
 6. Open `index.html` in your preferred browser
 
 ## Project status

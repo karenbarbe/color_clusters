@@ -7,7 +7,7 @@ RUN THIS SCRIPT: python3 main.py run
 
 """
 
-image_name = "cups"
+image_name = "WAM01"
 url = f"raw.githubusercontent.com/karenbarbe/color_clusters/refs/heads/main/images"
 image_url = f"{url}/{image_name}.jpg"
 precision_type = "low"
