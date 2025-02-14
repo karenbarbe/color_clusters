@@ -17,30 +17,33 @@
       <section class="wrapper section">
         <h2>How it works</h2>
         <div class="content-container">
-          <p>Color Clusters use the set of colors obtained with <a href="https://mk.bcgsc.ca/colorsummarizer/">Image Color Summarizer API</a> and adjusts their saturation and lightness to create an enticing color palette.</p>
-          <p>The API reports accurate hues, but the saturation and lightness values can appear muddy if the intention is to use the resulting palette in a visual project.</p>
-          <p>The following color corrections aim at enhacing the palette:</p>
-          <p><span class="semibold">Hue</span>
-<ul>
-  <li>Original hue value</li>
-</ul>
-</p>
+          <p>Color Clusters help you visualize an enhanced version of colors obtained from the <a href="https://mk.bcgsc.ca/colorsummarizer/">Image Color Summarizer API</a> by adjusting their saturation and lightness.</p>
+          <p>While the API accurately captures hue values, it returns averaged colors that can appear muddy, especially when the palette is intended for visual projects.</p>
+          <p>The following color corrections bring out the vibrant and clean colors that our eyes perceive in the image by boosting saturation and adjusting lightness levels:</p>
 
-<p><span class="semibold">Saturation</span>
-<ul>
-  <li>Light colors (L ≥ 70): Increase by ~25%</li>
-  <li>Mid-range colors (40 ≤ L < 70): Increase by ~20%</li>
-  <li>Dark colors (L < 40): Increase by ~13%</li>
-</ul>
-</p>
-
-<p><span class="semibold">Lightness</span>
-<ul>
-  <li>Light colors: Increase by 5-6 points</li>
-  <li>Mid-range colors: Increase by 13-14 points</li>
-  <li>Dark colors: Increase by 10 points</li>
-</ul>
-</p>
+          <div class="paragraph-card">
+            <p><span class="semibold">Hue</span>
+            <ul>
+              <li>Original hue value</li>
+            </ul>
+            </p>
+            
+            <p><span class="semibold">Saturation</span>
+            <ul>
+              <li>Light colors (L ≥ 70): Increase by ~25%</li>
+              <li>Mid-range colors (40 ≤ L < 70): Increase by ~20%</li>
+              <li>Dark colors (L < 40): Increase by ~13%</li>
+            </ul>
+            </p>
+            
+            <p><span class="semibold">Lightness</span>
+            <ul>
+              <li>Light colors: Increase by 5-6 points</li>
+              <li>Mid-range colors: Increase by 13-14 points</li>
+              <li>Dark colors: Increase by 10 points</li>
+            </ul>
+            </p>
+          </div>
         </div>
       </section>
       <section class="wrapper section">
@@ -72,3 +75,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
