@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
+    <main id="main">
+      <div id="color-clusters" class="color-sample__list"></div>
 <div class="wrapper">
-  <div id="color-clusters" class="color-sample__list"></div>
   <div class="h1-container">
     <h1 class="">Color clusters</h1>
   </div>
@@ -49,30 +49,6 @@
         </div>
         <div id="sample-image" class="image-container"></div>
       </section>
-      <section class="wrapper section">
-        <div class="h2-container">
-          <h2>Corrected color clusters</h2>
-        </div>
-        <div class="table-container overflow-x">
-          <table class="table">
-            <tr id="swatch-row" class="swatch-row">
-              <th>Color swatch</th>
-            </tr>
-            <tr id="hex-row">
-              <th>Hex color</th>
-            </tr>
-            <tr id="hue-row">
-              <th>Hue</th>
-            </tr>
-            <tr id="saturation-row">
-              <th>Saturation</th>
-            </tr>
-            <tr id="lightness-row">
-              <th>Lightness</th>
-            </tr>
-          </table>
-        </div>
-      </section>
     </main>
     <footer>
       <div class="wrapper footer-container">
@@ -82,6 +58,7 @@
           <li>Follow README file to create virtual environment and install packages</li>
           <li>Update <code>image_name</code> and/or <code>url</code> to match the image location in <code>main.py</code></li>
           <li>Update <code>imageName</code> variable in <code>script.js</code></li>
+          <li>Update <code>num</code> variable in <code>script.js</code> to adjust clusters quantity</li>
           <li>Run <code>main.py</code> and open <code>index.html</code></li>
         </ul>
       </div>

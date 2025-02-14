@@ -59,11 +59,13 @@ source .venv/bin/activate
 pip install requirements.txt
 ```
 
-3. Update `image_name` and/or `url` to match the image location in `main.py`
+3. Update `image_name` and/or `url` to match the image location in `main.py`. Adjust `num` for clusters quantity.
 
 ```
 image_name = "WAM01"
 url = f"raw.githubusercontent.com/karenbarbe/color_clusters/refs/heads/main/images"
+
+num = 7
 ```
 
 4. Update `imageName` variable in `script.js`

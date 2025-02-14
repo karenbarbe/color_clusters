@@ -187,7 +187,7 @@ code {
   overflow-x: auto;
 }
 
-.table tbody > tr + tr {
+.table > tr + tr {
   border-block-start: 1px solid var(--stroke-subtle);
 }
 
@@ -207,8 +207,13 @@ code {
   display: flex;
 }
 
+.swatch {
+  cursor: pointer;
+}
+
 .color-sample__list {
   display: flex;
+  width: 100%;
 
   & div {
     height: 1.5vh;
