@@ -31,8 +31,7 @@ Lightness
 
 **Layout**:
 
-- Minimal HTML structure
-- Responsive CSS with media queries to adapt to mobile, tablet, desktop and large screen
+- Responsive CSS
 
 **Data pipeline**:
 

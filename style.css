@@ -231,7 +231,8 @@ footer > * + * {
 }
 .footer-container ul {
   list-style-type: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-inline-start: var(--p-sm);
   line-height: 1.8;
 }
 
