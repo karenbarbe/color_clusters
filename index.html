@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Clusters | Capture color palettes from images</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/ab869dc250.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <main id="main">
@@ -15,34 +16,37 @@
   </div>
 </div>
       <section class="wrapper section">
-        <h2>How it works</h2>
+        <h2 class="h2-container">How it works</h2>
         <div class="content-container">
-          <p>Color Clusters help you visualize an enhanced version of colors obtained from the <a href="https://mk.bcgsc.ca/colorsummarizer/">Image Color Summarizer API</a> by adjusting their saturation and lightness.</p>
-          <p>While the API accurately captures hue values, it returns averaged colors that can appear muddy, especially when the palette is intended for visual projects.</p>
-          <p>The following color corrections bring out the vibrant and clean colors that our eyes perceive in the image by boosting saturation and adjusting lightness levels:</p>
+          <div class="content-column">
+            <p>Color Clusters help you visualize an enhanced version of colors obtained from the <a href="https://mk.bcgsc.ca/colorsummarizer/">Image Color Summarizer API</a> by adjusting their saturation and lightness.</p>
+            <p>While the API accurately captures hue values, it returns averaged colors that can appear muddy, especially when the palette is intended for visual projects.</p>
+            <p>The Color Clusters script aim to bring out the vibrant and clean colors that our eyes perceive in the image by boosting saturation and adjusting lightness levels as shown in the following chart.</p>
+          </div>
 
           <div class="paragraph-card">
-            <p><span class="semibold">Hue</span>
+            <h3>Color corrections</h3>
+            <h4><span class="semibold">Hue</span></h4>
             <ul>
               <li>Original hue value</li>
             </ul>
-            </p>
             
-            <p><span class="semibold">Saturation</span>
+            
+            <h4><span class="semibold">Saturation</span></h4>
             <ul>
               <li>Light colors (L ≥ 70): Increase by ~25%</li>
               <li>Mid-range colors (40 ≤ L < 70): Increase by ~20%</li>
               <li>Dark colors (L < 40): Increase by ~13%</li>
             </ul>
-            </p>
             
-            <p><span class="semibold">Lightness</span>
+            
+            <h4><span class="semibold">Lightness</span></h4>
             <ul>
               <li>Light colors: Increase by 5-6 points</li>
               <li>Mid-range colors: Increase by 13-14 points</li>
               <li>Dark colors: Increase by 10 points</li>
             </ul>
-            </p>
+            
           </div>
         </div>
       </section>

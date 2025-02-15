@@ -12,8 +12,12 @@ const loadColors = async () => {
   }
 };
 
-function copyColorToClipboard(color) {
+function copyColorToClipboard(color, element) {
   navigator.clipboard.writeText(color);
+  element.classList.add("confirmation");
+  setTimeout(() => {
+    element.classList.remove("confirmation");
+  }, 1000);
 }
 
 const init = async () => {
@@ -81,7 +85,7 @@ const init = async () => {
           tdElement.classList.add("swatch");
           tdElement.style.backgroundColor = hexColor;
           tdElement.addEventListener("click", () =>
-            copyColorToClipboard(hexColor)
+            copyColorToClipboard(hexColor, tdElement)
           );
           trElement.appendChild(tdElement);
         } else {
