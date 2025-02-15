@@ -67,7 +67,12 @@ html {
 /* ––––––––––––––––––––
       TYPOGRAPHY
   ––––––––––––––––––––– */
-
+h1,
+h2,
+h3,
+h4 {
+  text-wrap-style: balance;
+}
 h2,
 h3 {
   line-height: 1.2;
@@ -81,9 +86,13 @@ h1 {
   font-style: italic;
 }
 
-h2,
-h3 {
+h2 {
   font-weight: 500;
+}
+
+h3 {
+  font-family: "IBM Plex Mono";
+  font-weight: 300;
 }
 
 th {
@@ -149,10 +158,6 @@ code {
 
 .h1-container h1 {
   margin-block-start: 1.5rem;
-}
-
-.h2-container h2 {
-  text-wrap-style: balance;
 }
 
 /* Content columns */
@@ -281,7 +286,7 @@ code {
     padding: 0.25rem 0.125rem;
     font-family: "IBM Plex Sans", sans-serif;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 0.25rem;
     opacity: 0;
     transition: opacity 0.3s ease;
