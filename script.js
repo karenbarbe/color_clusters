@@ -25,7 +25,15 @@ const init = async () => {
   const colorKeys = Object.keys(colors);
   const clusterGroups = ["corrected", "original"];
   const sections = ["Corrected color clusters", "Original API colors"];
-  const rows = ["Color swatch", "Hex color", "Hue", "Saturation", "Lightness"];
+  const rows = [
+    "Color swatch",
+    "Hex color",
+    "Hue",
+    "Saturation",
+    "Lightness",
+    "Perceptual lightness",
+    "Chroma",
+  ];
 
   const main = document.getElementById("main");
   const container = document.querySelector(".color-sample__list");
@@ -77,7 +85,17 @@ const init = async () => {
         let hue = colors[colorKey][clusterGroups[i]]["hsl"][0];
         let saturation = colors[colorKey][clusterGroups[i]]["hsl"][1];
         let lightness = colors[colorKey][clusterGroups[i]]["hsl"][2];
-        const values = [hexColor, hue, saturation, lightness];
+        let perceptualLightness =
+          colors[colorKey][clusterGroups[i]]["lab"][0].toFixed(2);
+        let chroma = colors[colorKey][clusterGroups[i]]["lch"][1].toFixed(2);
+        const values = [
+          hexColor,
+          hue,
+          saturation,
+          lightness,
+          perceptualLightness,
+          chroma,
+        ];
         const tdElement = document.createElement("td");
 
         if (row === "Color swatch") {
@@ -102,16 +120,3 @@ const init = async () => {
 };
 
 init();
-
-// for (let i = 0; i < Object.keys(colors).length; i++) {
-//   let hexColor = colors[i + 1]["corrected"]["hex"];
-//   let hue = colors[i + 1]["corrected"]["hsl"][0];
-//   let saturation = colors[i + 1]["corrected"]["hsl"][1];
-//   let lightness = colors[i + 1]["corrected"]["hsl"][2];
-//   let pixelRatio = colors[i + 1]["ratio"] * 100;
-
-//   // Creates color clusters by ratio
-//   const chip = document.createElement("div");
-//   chip.style.backgroundColor = hexColor;
-//   chip.style.width = `${pixelRatio}rem`;
-//   container.appendChild(chip);

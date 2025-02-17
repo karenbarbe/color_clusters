@@ -1,5 +1,11 @@
 import json, requests
-from color_corrector import correct_hsl_colors, hex_to_hsl, hsl_to_hex
+from color_corrector import (
+    correct_hsl_colors,
+    hex_to_hsl,
+    hsl_to_hex,
+    hex_to_lab,
+    lab_to_lch,
+)
 
 """
 TO START: Update the variable `image_name` and/or `url` to match the image location. Do the same for `imageName` in script.js
@@ -58,13 +64,28 @@ def correct_clusters():
     else:
         hex_colors = [clusters[str(i + 1)]["hex"] for i in range(len(clusters))]
         hsl_colors = [hex_to_hsl(hex_color) for hex_color in hex_colors]
+        original_hex_to_lab = [hex_to_lab(hex) for hex in hex_colors]
+        original_lab_to_lch = [lab_to_lch(L, a, b) for L, a, b in original_hex_to_lab]
+
         corrected_hsl = correct_hsl_colors(hsl_colors)
         corrected_hex = [hsl_to_hex(hsl) for hsl in corrected_hsl]
+        corrected_hex_to_lab = [hex_to_lab(hex) for hex in corrected_hex]
+        corrected_lab_to_lch = [lab_to_lch(L, a, b) for L, a, b in corrected_hex_to_lab]
 
         return {
             str(i + 1): {
-                "original": {"hex": hex_colors[i], "hsl": hsl_colors[i]},
-                "corrected": {"hex": corrected_hex[i], "hsl": corrected_hsl[i]},
+                "original": {
+                    "hex": hex_colors[i],
+                    "hsl": hsl_colors[i],
+                    "lab": original_hex_to_lab[i],
+                    "lch": original_lab_to_lch[i],
+                },
+                "corrected": {
+                    "hex": corrected_hex[i],
+                    "hsl": corrected_hsl[i],
+                    "lab": corrected_hex_to_lab[i],
+                    "lch": corrected_lab_to_lch[i],
+                },
                 "ratio": clusters[str(i + 1)]["ratio"],
             }
             for i in range(len(hex_colors))
