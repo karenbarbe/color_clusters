@@ -253,7 +253,7 @@ code {
 /* Swatches row in table */
 
 .swatch-row {
-  height: 12vh;
+  height: 14vh;
 
   & th {
     display: flex;
@@ -285,9 +285,9 @@ code {
   &::after {
     width: 70%;
     position: absolute;
-    top: 20%;
+    top: 8%;
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -8%);
     content: "Hex copied";
     text-align: center;
     font-size: 0.8rem;
