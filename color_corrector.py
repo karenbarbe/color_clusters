@@ -205,6 +205,10 @@ def lab_to_lch(L, a, b):
     if h < 0:
         h += 360
 
+    L = round(L)
+    C = round(C)
+    h = round(h)
+
     return L, C, h
 
 
@@ -222,34 +226,6 @@ def hex_to_lab(hex_color):
     x, y, z = rgb_to_xyz(r, g, b)
 
     # Convert XYZ to LAB
-    return xyz_to_lab(x, y, z)
+    L, a, b = xyz_to_lab(x, y, z)
 
-
-def get_color_attributes(hex_color):
-    """
-    Get color attributes for LAB, LCH, HSL, pereceived brightness, and colorfulness values.
-
-    Parameters:
-    hex_color (str): Color in hex format (e.g., '#FF0000' or 'FF0000')
-
-    Returns:
-    dict: Dictionary containing various color attributes
-    """
-    # Get LAB values
-    L, a, b = hex_to_lab(hex_color)
-
-    # Convert to LCH
-    _, C, h = lab_to_lch(L, a, b)
-
-    # Get traditional HSL values (using your existing function)
-    hue, sat, light = hex_to_hsl(hex_color)
-
-    return {
-        "lab": {"L": L, "a": a, "b": b},  # L value is perceptual lightness
-        "lch": {
-            "L": L,
-            "C": C,
-            "h": h,
-        },  # Chroma is perceptual saturation or colorfulness
-        "hsl": {"h": hue, "s": sat, "l": light},
-    }
+    return round(L), round(a), round(b)

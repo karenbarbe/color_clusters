@@ -1,0 +1,113 @@
+{
+  "light_to_dark": [
+    {
+      "hex": "#D5BEBE",
+      "lightness": 79,
+      "chroma": 9
+    },
+    {
+      "hex": "#CEAF82",
+      "lightness": 73,
+      "chroma": 27
+    },
+    {
+      "hex": "#6C70AC",
+      "lightness": 49,
+      "chroma": 35
+    },
+    {
+      "hex": "#B44D27",
+      "lightness": 46,
+      "chroma": 58
+    },
+    {
+      "hex": "#4E4563",
+      "lightness": 31,
+      "chroma": 19
+    },
+    {
+      "hex": "#742820",
+      "lightness": 28,
+      "chroma": 40
+    },
+    {
+      "hex": "#462F46",
+      "lightness": 23,
+      "chroma": 18
+    }
+  ],
+  "dark_to_light": [
+    {
+      "hex": "#462F46",
+      "lightness": 23,
+      "chroma": 18
+    },
+    {
+      "hex": "#742820",
+      "lightness": 28,
+      "chroma": 40
+    },
+    {
+      "hex": "#4E4563",
+      "lightness": 31,
+      "chroma": 19
+    },
+    {
+      "hex": "#B44D27",
+      "lightness": 46,
+      "chroma": 58
+    },
+    {
+      "hex": "#6C70AC",
+      "lightness": 49,
+      "chroma": 35
+    },
+    {
+      "hex": "#CEAF82",
+      "lightness": 73,
+      "chroma": 27
+    },
+    {
+      "hex": "#D5BEBE",
+      "lightness": 79,
+      "chroma": 9
+    }
+  ],
+  "saturated_to_dull": [
+    {
+      "hex": "#B44D27",
+      "lightness": 46,
+      "chroma": 58
+    },
+    {
+      "hex": "#742820",
+      "lightness": 28,
+      "chroma": 40
+    },
+    {
+      "hex": "#6C70AC",
+      "lightness": 49,
+      "chroma": 35
+    },
+    {
+      "hex": "#CEAF82",
+      "lightness": 73,
+      "chroma": 27
+    },
+    {
+      "hex": "#4E4563",
+      "lightness": 31,
+      "chroma": 19
+    },
+    {
+      "hex": "#462F46",
+      "lightness": 23,
+      "chroma": 18
+    },
+    {
+      "hex": "#D5BEBE",
+      "lightness": 79,
+      "chroma": 9
+    }
+  ]
+}

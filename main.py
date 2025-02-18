@@ -98,4 +98,44 @@ def create_clusters_json():
         json.dump(clusters, f, indent=2)
 
 
-create_clusters_json()
+# create_clusters_json()
+
+
+def get_colors_list():
+    with open(output, "r") as f:
+        data = json.load(f)
+
+        return [
+            {
+                "hex": color["corrected"]["hex"],
+                "lightness": color["corrected"]["lab"][0],
+                "chroma": color["corrected"]["lch"][1],
+            }
+            for color in data.values()
+        ]
+
+
+def sort_colors():
+    colors_list = get_colors_list()
+    light_to_dark = sorted(colors_list, key=lambda k: k["lightness"], reverse=True)
+    dark_to_light = sorted(colors_list, key=lambda k: k["lightness"])
+    saturated_to_dull = sorted(colors_list, key=lambda k: k["chroma"], reverse=True)
+    print(dark_to_light)
+    print(light_to_dark)
+    print(saturated_to_dull)
+
+    return {
+        "original": colors_list,
+        "lighter": light_to_dark,
+        "darker": dark_to_light,
+        "colorful": saturated_to_dull,
+    }
+
+
+def create_sorted_json():
+    colors = sort_colors()
+    with open(f"./data/{image_name}-sorted.json", "w") as f:
+        json.dump(colors, f, indent=2)
+
+
+create_sorted_json()

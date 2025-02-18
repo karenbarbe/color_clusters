@@ -12,6 +12,16 @@ const loadColors = async () => {
   }
 };
 
+const loadSortedColors = async () => {
+  try {
+    const response = await fetch(`./data/${imageName}-sorted.json`);
+    const colorData = await response.json();
+    return colorData;
+  } catch (error) {
+    console.error("Error loading sorted color data:", error);
+  }
+};
+
 function copyColorToClipboard(color, element) {
   navigator.clipboard.writeText(color);
   element.classList.add("confirmation");
@@ -20,10 +30,25 @@ function copyColorToClipboard(color, element) {
   }, 1000);
 }
 
+function createSection(heading) {
+  const sectionElement = document.createElement("section");
+  sectionElement.classList.add("wrapper", "section");
+  const h2Container = document.createElement("div");
+  h2Container.classList.add("h2-container");
+  const h2Heading = document.createElement("h2");
+  h2Heading.textContent = heading;
+  h2Container.appendChild(h2Heading);
+  sectionElement.appendChild(h2Container);
+
+  return sectionElement;
+}
+
 const init = async () => {
   const colors = await loadColors();
+  const sortedColors = await loadSortedColors();
   const colorKeys = Object.keys(colors);
   const clusterGroups = ["corrected", "original"];
+  const colorMoods = ["original", "lighter", "darker", "colorful"];
   const sections = ["Corrected color clusters", "Original API colors"];
   const rows = [
     "Color swatch",
@@ -31,12 +56,13 @@ const init = async () => {
     "Hue",
     "Saturation",
     "Lightness",
-    "Perceptual lightness",
-    "Chroma",
+    "Perceptual lightness (CIELAB)",
+    "Chroma (LCH)",
   ];
 
   const main = document.getElementById("main");
   const container = document.querySelector(".color-sample__list");
+  const colormoodSection = document.getElementById("color-moods");
 
   // Creates color clusters by ratio
   colorKeys.forEach((colorKey) => {
@@ -59,15 +85,7 @@ const init = async () => {
 
   // Creates sections for corrected and original color clusters
   sections.forEach((section, i) => {
-    const sectionElement = document.createElement("section");
-    sectionElement.classList.add("wrapper", "section");
-    // Creates heading container
-    const h2Container = document.createElement("div");
-    h2Container.classList.add("h2-container");
-    const h2Heading = document.createElement("h2");
-    h2Heading.textContent = section;
-    h2Container.appendChild(h2Heading);
-    sectionElement.appendChild(h2Container);
+    const sectionElement = createSection(section);
     // Creates table
     const tableContainer = document.createElement("div");
     tableContainer.classList.add("table-container", "overflow-x");
@@ -85,9 +103,8 @@ const init = async () => {
         let hue = colors[colorKey][clusterGroups[i]]["hsl"][0];
         let saturation = colors[colorKey][clusterGroups[i]]["hsl"][1];
         let lightness = colors[colorKey][clusterGroups[i]]["hsl"][2];
-        let perceptualLightness =
-          colors[colorKey][clusterGroups[i]]["lab"][0].toFixed(2);
-        let chroma = colors[colorKey][clusterGroups[i]]["lch"][1].toFixed(2);
+        let perceptualLightness = colors[colorKey][clusterGroups[i]]["lab"][0];
+        let chroma = colors[colorKey][clusterGroups[i]]["lch"][1];
         const values = [
           hexColor,
           hue,
@@ -115,8 +132,39 @@ const init = async () => {
     });
     tableContainer.appendChild(table);
     sectionElement.appendChild(tableContainer);
-    main.appendChild(sectionElement);
+    main.insertBefore(sectionElement, colormoodSection);
   });
+
+  // Creates color moods
+
+  const paletteWrapper = document.createElement("div");
+  paletteWrapper.classList.add("colormood-wrapper");
+
+  colorMoods.forEach((mood) => {
+    // Creates headings
+    const heading = document.createElement("h3");
+    const headingContent = `${mood.charAt(0).toUpperCase()}${mood.slice(
+      1
+    )} mood`;
+    heading.textContent = headingContent;
+    paletteWrapper.appendChild(heading);
+
+    const paletteContainer = document.createElement("div");
+    paletteContainer.classList.add("colormood-container");
+
+    // Creates palette elements
+    colorKeys.forEach((colorKey, j) => {
+      let hexColor = sortedColors[mood][j]["hex"];
+      let pixelRatio = colors[colorKey]["ratio"] * 100;
+      const chip = document.createElement("div");
+      chip.style.backgroundColor = hexColor;
+      chip.style.width = `${pixelRatio}%`;
+      paletteContainer.appendChild(chip);
+    });
+    paletteWrapper.appendChild(paletteContainer);
+  });
+
+  colormoodSection.appendChild(paletteWrapper);
 };
 
 init();

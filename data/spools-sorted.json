@@ -1,0 +1,150 @@
+{
+  "original": [
+    {
+      "hex": "#C8C3A2",
+      "lightness": 78,
+      "chroma": 17
+    },
+    {
+      "hex": "#E27E36",
+      "lightness": 63,
+      "chroma": 63
+    },
+    {
+      "hex": "#DEB691",
+      "lightness": 77,
+      "chroma": 26
+    },
+    {
+      "hex": "#9A7F51",
+      "lightness": 55,
+      "chroma": 29
+    },
+    {
+      "hex": "#9E4215",
+      "lightness": 40,
+      "chroma": 56
+    },
+    {
+      "hex": "#DBC548",
+      "lightness": 79,
+      "chroma": 63
+    },
+    {
+      "hex": "#4E3B36",
+      "lightness": 27,
+      "chroma": 10
+    }
+  ],
+  "light_to_dark": [
+    {
+      "hex": "#DBC548",
+      "lightness": 79,
+      "chroma": 63
+    },
+    {
+      "hex": "#C8C3A2",
+      "lightness": 78,
+      "chroma": 17
+    },
+    {
+      "hex": "#DEB691",
+      "lightness": 77,
+      "chroma": 26
+    },
+    {
+      "hex": "#E27E36",
+      "lightness": 63,
+      "chroma": 63
+    },
+    {
+      "hex": "#9A7F51",
+      "lightness": 55,
+      "chroma": 29
+    },
+    {
+      "hex": "#9E4215",
+      "lightness": 40,
+      "chroma": 56
+    },
+    {
+      "hex": "#4E3B36",
+      "lightness": 27,
+      "chroma": 10
+    }
+  ],
+  "dark_to_light": [
+    {
+      "hex": "#4E3B36",
+      "lightness": 27,
+      "chroma": 10
+    },
+    {
+      "hex": "#9E4215",
+      "lightness": 40,
+      "chroma": 56
+    },
+    {
+      "hex": "#9A7F51",
+      "lightness": 55,
+      "chroma": 29
+    },
+    {
+      "hex": "#E27E36",
+      "lightness": 63,
+      "chroma": 63
+    },
+    {
+      "hex": "#DEB691",
+      "lightness": 77,
+      "chroma": 26
+    },
+    {
+      "hex": "#C8C3A2",
+      "lightness": 78,
+      "chroma": 17
+    },
+    {
+      "hex": "#DBC548",
+      "lightness": 79,
+      "chroma": 63
+    }
+  ],
+  "saturated_to_dull": [
+    {
+      "hex": "#E27E36",
+      "lightness": 63,
+      "chroma": 63
+    },
+    {
+      "hex": "#DBC548",
+      "lightness": 79,
+      "chroma": 63
+    },
+    {
+      "hex": "#9E4215",
+      "lightness": 40,
+      "chroma": 56
+    },
+    {
+      "hex": "#9A7F51",
+      "lightness": 55,
+      "chroma": 29
+    },
+    {
+      "hex": "#DEB691",
+      "lightness": 77,
+      "chroma": 26
+    },
+    {
+      "hex": "#C8C3A2",
+      "lightness": 78,
+      "chroma": 17
+    },
+    {
+      "hex": "#4E3B36",
+      "lightness": 27,
+      "chroma": 10
+    }
+  ]
+}

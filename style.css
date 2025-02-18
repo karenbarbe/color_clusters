@@ -14,6 +14,9 @@
   /* Color tokens */
   --stroke-subtle: var(--gray);
 
+  /* Font size */
+  --fs-small: 0.875rem;
+
   /* Padding */
   --p-xs: 0.75rem;
   --p-sm: 1rem;
@@ -96,12 +99,12 @@ h3 {
 
 th {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
 td {
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
 }
 
 a {
@@ -115,16 +118,20 @@ a:visited {
   color: inherit;
 }
 
-.semibold {
-  font-weight: 500;
-}
-
 code {
   display: inline-block;
   background-color: var(--vlgray);
   line-height: 1.5;
   padding-inline: 0.3em;
   border-radius: 0.3em;
+}
+
+.semibold {
+  font-weight: 500;
+}
+
+.fs-small {
+  font-size: var(--fs-small);
 }
 
 /* ––––––––––––––––––––
@@ -139,7 +146,7 @@ code {
 .section {
   display: grid;
   padding-block: 1rem 2rem;
-  gap: 2rem;
+  gap: 2.5rem;
   border-block-start: 1px solid var(--stroke-subtle);
 }
 
@@ -156,6 +163,10 @@ code {
 }
 
 .h1-container h1 {
+  margin-block-start: 1.5rem;
+}
+
+.h2-container > * + * {
   margin-block-start: 1.5rem;
 }
 
@@ -178,7 +189,7 @@ code {
   background-color: white;
   padding-block: 1.5rem 2rem;
   padding-inline: 1rem;
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
 
   & > * + * {
     margin-block-start: 1.5em;
@@ -312,12 +323,37 @@ code {
   }
 }
 
+/* Color moods section */
+
+#color-moods.section {
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 12rem 1fr;
+    gap: 2.5rem;
+  }
+}
+.colormood-wrapper > * + * {
+  margin-block-start: 1.5rem;
+}
+
+.colormood-container {
+  display: flex;
+  width: 100%;
+
+  & div {
+    height: 8vh;
+
+    @media screen and (max-width: 768px) {
+      height: 6vh;
+    }
+  }
+}
+
 /* Footer */
 
 footer {
   padding-block: 4rem;
   background-color: #ffffff;
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
 }
 
 footer > * + * {
@@ -327,16 +363,15 @@ footer > * + * {
 .footer-container {
   display: grid;
   gap: 1.5rem;
-}
-.footer-container ul {
-  list-style-type: disc;
-  padding-inline-start: var(--p-sm);
-  line-height: 1.75;
-}
 
-@media screen and (min-width: 768px) {
-  .footer-container {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 12rem 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+
+  & ul {
+    list-style-type: disc;
+    padding-inline-start: var(--p-sm);
+    line-height: 1.75;
   }
 }
